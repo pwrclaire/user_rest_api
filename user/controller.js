@@ -9,8 +9,8 @@ user.get("/", (req, res) => {
 });
 
 user.get("/id", (req, res) => {
-  const uuid = service.generateId();
-  return res.send({ id: uuid });
+  const id = service.generateId();
+  return res.send({ id });
 });
 
 user.get("/:name", (req, res) => {
@@ -27,8 +27,8 @@ user.post("/", async (req, res) => {
     return res.render("success", { name, count: count || 0 });
   } else {
     return res.render("retry", {
-      name: name,
-      age: age,
+      name,
+      age,
       count: count ? ++count : 1,
     });
   }
