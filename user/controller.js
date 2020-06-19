@@ -5,7 +5,7 @@ const user = Router();
 const service = new Service();
 
 user.get("/", (req, res) => {
-  return res.send({ message: "Please include name in parameter" });
+  return res.send("Please include a name in the parameter");
 });
 
 user.get("/id", (req, res) => {
@@ -13,21 +13,23 @@ user.get("/id", (req, res) => {
   return res.send({ id: uuid });
 });
 
-user.get("/:user", (req, res) => {
-  const user = req.params.user;
-  const uuid = service.generateId();
-  res.render("index", { name: user, id: uuid });
+user.get("/:name", (req, res) => {
+  const { name } = req.params;
+  const id = service.generateId();
+  res.render("index", { name, id });
 });
 
 user.post("/", async (req, res) => {
+  const { name, age } = req.body;
+  let { count } = req.body;
   const result = await service.saveUser();
   if (result) {
-    return res.render("success", { count: req.body.count || 0 });
+    return res.render("success", { name, count: count || 0 });
   } else {
     return res.render("retry", {
-      name: req.body.name,
-      age: req.body.age,
-      count: req.body.count ? ++req.body.count : 1,
+      name: name,
+      age: age,
+      count: count ? ++count : 1,
     });
   }
 });

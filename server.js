@@ -13,11 +13,8 @@ app.set("view engine", "ejs");
 app.use("/user", user);
 app.use("/db", db);
 
-app.get("/", (req, res) => {
-  return res.send({
-    message: "Please enter parameters",
-    example: "localhost:3000/user/id",
-  });
+app.use((req, res, next) => {
+  res.status(404).send("Please enter a correct url. e.g: /user/bob");
 });
 
 const port = 3000;
