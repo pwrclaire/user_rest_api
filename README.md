@@ -8,6 +8,8 @@
 
 `npm start`
 
+Please visit `localhost:3000/user/bob`
+
 ### Testing
 
 Tests are written in Jest.
@@ -30,6 +32,6 @@ Users are displayed when it's entered in the parameter
 
 Save user: Pages will reload when saving fails. Eventually leading to success
 
-#### Knwon issues
+#### Known issues
 
 No input checking for user input names
