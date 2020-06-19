@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USER API</title>
+</head>
+
+<body>
+  <div>User id: <%= id %> </div>
+  <div>User name: <%= name %></div>
+  <br>
+  <div>New user</div>
+  <form action="/user" method="POST" name="form">
+    <label for="name">Name</label>
+    <input type="text" name='name'>
+    <input type="submit" value="submit">
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USER API</title>
+</head>
+
+<body onload="document.form.submit()">
+  <div>RETRYING</div>
+  <form action="/user" method="POST" name="form">
+    <input type="text" name='name' value=<%= name %>>
+    <input type="text" name="age" value=<%= age %>>
+    <input type="text" name="count" value=<%= count %>>
+    <input type="submit" value="submit">
+  </form>
+</body>
+
+</html>
