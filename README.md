@@ -8,7 +8,7 @@
 
 `npm start`
 
-Please visit localhost:3000/user/bob
+Please visit `localhost:3000/user/bob`
 
 ### Testing
 
